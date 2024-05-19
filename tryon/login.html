@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>穿搭助理</title>
+    <style>
+        body {
+            background-color: #efdaa7;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            height: 100vh;
+        }
+        .header {
+            text-align: center;
+            margin-bottom: 20px;
+            width: 700px;
+        }
+        .intro-text {
+            text-align: center;
+            padding: 10px;
+            //background-color: #f0e5ec;
+            border-radius: 5px;
+            margin-bottom: 20px;
+        }
+        .login-container {
+            background-color: #eac7d0;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: 400px;
+            text-align: center;
+        }
+        .policy-text {
+            max-height: 100px;
+            overflow-y: auto;
+            text-align: left;
+            padding: 10px;
+            background-color: #f0e5ec;
+            border-radius: 5px;
+            margin-bottom: 20px;
+        }
+        .login-container button {
+            width: calc(100% - 20px);
+            padding: 10px;
+            border: none;
+            background-color: #ADD8E6;
+            color: black;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            border-radius: 5px;
+        }
+        .login-container button:disabled {
+            background-color: #ccc;
+            cursor: not-allowed;
+        }
+        .login-container button:hover:enabled {
+            background-color: #e5a3ad;
+        }
+        .checkbox-container {
+            text-align: left;
+            margin-bottom: 20px;
+        }
+    </style>
+    <script>
+        function toggleButton() {
+            const checkbox = document.getElementById('agree');
+            const button = document.getElementById('startButton');
+            button.disabled = !checkbox.checked;
+        }
+
+        function redirectToIndex() {
+            window.location.href = 'index.html';
+        }
+    </script>
+</head>
+<body>
+
+<div class="header">
+    <h1>登入</h1>
+    <div class="intro-text">
+        <p>歡迎使用穿搭助理！本平台將幫助您挑選最適合的穿搭風格。請先登入以繼續。</p>
+        <p>我們提供個性化的建議和範例圖，幫助您找到最適合您的穿衣風格。無論是日常穿搭還是特殊場合，我們都能為您提供靈感和指導。</p>
+        <p>登入後，您可以上傳您的照片並獲得專業的穿搭建議。開始您的穿搭旅程吧！</p>
+    </div>
+</div>
+
+<div class="login-container">
+    <div class="policy-text">
+        <p>隱私權政策: 我們非常重視您的隱私，所有上傳的照片僅用於穿搭建議，絕不會外洩。</p>
+        <p>使用條款: 使用本平台即表示您同意我們的隱私權政策和使用條款。</p>
+    </div>
+    <div class="checkbox-container">
+        <label>
+            <input type="checkbox" id="agree" onclick="toggleButton()">
+            我已閱讀並同意隱私權政策和使用條款
+        </label>
+    </div>
+    <button id="startButton" disabled onclick="redirectToIndex()">開始</button>
+</div>
+
+</body>
+</html>

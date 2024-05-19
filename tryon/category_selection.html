@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>選擇類別</title>
+    <style>
+        body {
+            background-color: #efdaa7;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .button-container {
+            display: flex;
+            flex-direction: row;
+            gap: 20px;
+        }
+        .button-container button {
+            border: none;
+            background-color: #ADD8E6;
+            color: black;
+            padding: 100px 20px;
+            font-size: 40px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            writing-mode: vertical-rl; /* Rotates the text */
+            text-orientation: mixed;
+        }
+        .button-container button:hover {
+            background-color: #e5a3ad;
+        }
+    </style>
+</head>
+<body>
+<div class="button-container">
+    <button onclick="handleCategory('風格')">風格</button>
+    <button onclick="handleCategory('顏色')">顏色</button>
+    <button onclick="handleCategory('季節')">季節</button>
+    <button onclick="handleCategory('場合')">場合</button>
+</div>
+
+<script>
+    function handleCategory(category) {
+        // Add your logic to handle the selected category here
+        alert('您選擇了 ' + category);
+        // Redirect to any further action or page as needed
+        // For example:
+        // window.location.href = 'next_page.html';
+    }
+</script>
+
+</body>
+</html>
